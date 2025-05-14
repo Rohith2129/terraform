@@ -61,7 +61,7 @@ resource "aws_security_group" "allow_ssh" {
 
 resource "aws_instance" "web" {
   ami           = "ami-0e35ddab05955cf57" 
-  instance_type = "t2.medium"
+  instance_type = "t2.micro"
   subnet_id     = aws_subnet.custom_subnet.id
   key_name      = "newpem"
   security_groups = [aws_security_group.allow_ssh.name]

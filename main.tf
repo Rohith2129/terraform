@@ -64,7 +64,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.custom_subnet.id
   key_name      = "newpem"
-  security_groups = [aws_security_group.allow_ssh.name]
+  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   tags = {
     Name = "Terraform-EC2"
